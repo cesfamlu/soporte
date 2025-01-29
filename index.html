@@ -100,6 +100,36 @@
     color: black;
   }
 
+
+    /* Diseño mejorado del cuadro de confirmación */
+  .confirmacion-container {
+    background-color: orange; /* Amarillo suave */
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #e0b20b; /* Borde amarillo más fuerte */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 15px;
+  }
+
+  .confirmacion-container:hover {
+    background-color: #f4c842; /* Amarillo más fuerte al pasar el mouse */
+    border-color: #c99704;
+  }
+
+  .confirmacion-container input {
+    transform: scale(1.5); /* Hacer más grande el checkbox */
+    cursor: pointer;
+  }
+
+  .confirmacion-texto {
+    font-weight: bold;
+    font-size: 1.1rem; /* Aumentar tamaño de la letra */
+    color: #333;
+  }
+
   /* ======= RESPONSIVE DESIGN ======= */
 
   /* Para tablets y pantallas medianas */
@@ -164,7 +194,7 @@
 <body>
   <div class="main-container">
     <div class="side-container">
-      <img src="CESFAM_BLANCO.png" alt="Logo del CESFAM" class="logo">
+      <img src="img/CESFAM_BLANCO.png" alt="Logo del CESFAM" class="logo">
 
       <div class="links-container">
         <h5> <strong>Acceso a Links de Salud</strong></h5>
@@ -216,8 +246,10 @@
           <textarea class="form-control" id="problema" name="problema" rows="2" required></textarea>
         </div>
 
+
+ <div class="confirmacion-container">
         <!-- Confirmación -->
-        <div class="mb-3 form-check">
+        
           <input type="checkbox" class="form-check-input" id="confirmacion" required>
           <label class="form-check-label" for="confirmacion">Confirmo que los datos proporcionados son correctos.</label>
         </div>
@@ -234,7 +266,7 @@
 
   <!-- Firebase SDKs -->
   
-<script type="module">
+<<script type="module">
     // Importar Firebase desde los módulos de Firebase
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
     import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
@@ -253,6 +285,9 @@
     // Inicializar Firebase
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
+
+    // URL de Google Sheets Apps Script
+    const googleSheetsURL = "https://script.google.com/macros/s/AKfycbyoWk12LH2AohPJgFAAcZdZfyjlXp1dc07R-C6xHehN7ikCTsjv5ytmHNev5iCaBETP/exec";
 
     // Manejo del envío del formulario con validaciones
     document.getElementById('formulario').addEventListener('submit', async function(e) {
@@ -320,16 +355,28 @@
                 fecha: fecha,
                 problema: problema,
                 confirmacion: confirmacion
-            }).then(() => {
-                document.getElementById('formulario').reset();
-            }).catch((error) => {
-                respuesta.innerHTML = "⚠️ Error al enviar el reporte.";
-                respuesta.classList.add('text-danger');
-                console.error("Error:", error);
             });
+
+            // Enviar datos a Google Sheets
+            fetch(googleSheetsURL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    nombre: nombre,
+                    contacto: contacto,
+                    area: area,
+                    fecha: fecha,
+                    problema: problema
+                })
+            }).then(response => response.text())
+              .then(data => console.log("Google Sheets:", data))
+              .catch(error => console.error("Error al enviar a Google Sheets:", error));
+
+            document.getElementById('formulario').reset();
         }
     });
 </script>
+
 
 </body>
 </html>
