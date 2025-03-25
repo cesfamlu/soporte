@@ -5,223 +5,174 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulario de Reporte de Problemas Técnicos</title>
 
-
-
   <!-- Importar Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Estilos Personalizados -->
-<style>
-  body {
-    background-color: #000000; /* Fondo negro */
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
-    min-height: 100vh;
-    margin: 0;
-  }
 
-  .main-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    width: 100%;
-    max-width: 1200px;
-  }
-
-  .form-container {
-    background-color: white;
-    padding: 40px;
-    border-radius: 25px;
-    box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.2);
-    border: 3px solid #4c3889;
-    flex: 2;
-    animation: fadeIn 1s ease-in-out;
-  }
-
-  .side-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-    flex: 1;
-  }
-
-  .links-container {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
-    text-align: center;
-    width: 100%;
-    margin-left: -90px;
-    margin-top: -40px;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .form-container h2 {
-    margin-bottom: 15px;
-    color: black;
-  }
-
-  .form-container p {
-    margin-bottom: 30px;
-    color: black;
-  }
-
-  .logo {
-    width: 400px;
-    margin-top: -100px;
-    margin-left: -90px;
-  }
-
-  .btn {
-    background-color: #FFa400; /* Botones amarillos */
-    color: black;
-    padding: 10px 20px;
-    font-size: 16px;
-  }
-
-  .btn:hover {
-    background-color: #FFC107; /* Amarillo más claro para hover */
-  }
-
-  .form-label {
-    color: black;
-  }
-
-  .links-container h5 {
-    margin-bottom: 15px;
-    color: black;
-  }
-
-
-    /* Diseño mejorado del cuadro de confirmación */
-  .confirmacion-container {
-    background-color: orange; /* Amarillo suave */
-    padding: 10px;
-    border-radius: 10px;
-    border: 2px solid #e0b20b; /* Borde amarillo más fuerte */
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.3s ease-in-out;
-    margin-top: 15px;
-  }
-
-  .confirmacion-container:hover {
-    background-color: #f4c842; /* Amarillo más fuerte al pasar el mouse */
-    border-color: #c99704;
-  }
-
-  .confirmacion-container input {
-    transform: scale(1.5); /* Hacer más grande el checkbox */
-    cursor: pointer;
-  }
-
-  .confirmacion-texto {
-    font-weight: bold;
-    font-size: 1.1rem; /* Aumentar tamaño de la letra */
-    color: #333;
-  }
-
-  /* ======= RESPONSIVE DESIGN ======= */
-
-  /* Para tablets y pantallas medianas */
-  @media screen and (max-width: 1024px) {
-    .main-container {
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-    }
-    .side-container {
-      align-items: center;
-      text-align: center;
-    }
-    .logo {
-      width: 300px;
-      margin: 0 auto;
-    }
-    .links-container {
-      margin-left: 0;
-      width: 100%;
-    }
-    .form-container {
-      width: 90%;
-      padding: 30px;
-    }
-  }
-
-  /* Para celulares */
-  @media screen and (max-width: 768px) {
-    .main-container {
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-    .side-container {
-      align-items: center;
-      text-align: center;
-    }
-    .logo {
-      width: 250px;
-      margin: 0 auto;
-    }
-    .links-container {
-      margin-left: 0;
-      width: 100%;
-      padding: 15px;
-    }
-    .form-container {
-      width: 100%;
+  <!-- INICIO CSS -->
+  <style>
+    body {
+      background-color: #000;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
       padding: 20px;
-      border-radius: 15px;
+      min-height: 100vh;
+      margin: 0;
     }
+
+    .main-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.2);
+      border: 3px solid #4c3889;
+      flex: 2;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .side-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .links-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+      text-align: center;
+      width: 100%;
+      margin-left: -18x;
+      margin-top: -40px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .form-container h2,
+    .form-container p,
+    .form-label,
+    .links-container h5 {
+      color: black;
+    }
+
+    .logo {
+      width: 400px;
+      margin-top: -100px;
+      margin-left: -40px;
+    }
+
     .btn {
-      font-size: 14px;
-      padding: 8px 16px;
+      background-color: #ffa400;
+      color: black;
+      padding: 10px 20px;
+      font-size: 16px;
     }
-  }
 
-</style>
+    .btn:hover {
+      background-color: #000000;
+    }
 
+    .confirmacion-container {
+      background-color: rgb(255, 255, 255);
+      padding: 10px;
+      border-radius: 10px;
+      border: 2px solid #e0b20b;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease-in-out;
+      margin-top: 15px;
+    }
+
+    .confirmacion-container:hover {
+      background-color: #000000;
+      color: #fff;
+      border-color: #e0b20b;
+    }
+
+    .confirmacion-container input {
+      transform: scale(1.5);
+      cursor: pointer;
+    }
+
+    .confirmacion-texto {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media screen and (max-width: 1024px) {
+      .main-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+      }
+      .side-container,
+      .links-container,
+      .form-container {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+      }
+      .logo {
+        width: 300px;
+        margin: 0 auto;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .form-container {
+        padding: 20px;
+        border-radius: 15px;
+      }
+      .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+    }
+  </style>
+  <!-- FIN CSS -->
 </head>
+
 <body>
   <div class="main-container">
     <div class="side-container">
-      <img src="
-        CESFAM_BLANCO.png" alt="Logo del CESFAM" class="logo">
-
+      <img src="img/CESFAM_BLANCO.png" alt="Logo del CESFAM" class="logo">
       <div class="links-container">
-        <h5> <strong>Acceso a Links de Salud</strong></h5>
+        <h5><strong>Acceso a Links de Salud</strong></h5>
         <p>Encuentra recursos y páginas relacionadas con nuestro CESFAM.</p>
         <a href="http://cesfamlu.github.io/links" target="_blank" class="btn btn-primary">Ir a la Página</a>
       </div>
     </div>
 
     <div class="form-container">
-      <h2 class="text-center">Reporte de Problemas Técnicos</h2 >
-      <p class="text-center">Por favor, completa este formulario para reportar cualquier inconveniente técnico. Nuestro equipo lo atenderá lo antes posible.</p>
-      
+      <h2 class="text-center">Reporte de Problemas Técnicos</h2>
+      <p class="text-center">Por favor, completa este formulario para reportar cualquier inconveniente técnico.</p>
       <form id="formulario">
-        <!-- Nombre del solicitante -->
         <div class="mb-3">
           <label for="nombre" class="form-label">Nombre del Solicitante *</label>
           <input type="text" class="form-control" id="nombre" name="nombre" required>
         </div>
-
-        <!-- Correo o número de contacto -->
         <div class="mb-3">
           <label for="contacto" class="form-label">Correo Electrónico o Número de Contacto (Opcional)</label>
           <input type="text" class="form-control" id="contacto" name="contacto">
         </div>
-
-        <!-- Departamento o Área -->
         <div class="mb-3">
           <label for="area" class="form-label">Departamento o Área</label>
           <select class="form-select" id="area" name="area" required>
@@ -234,150 +185,100 @@
             <option value="Centro de Salud Maiten">Centro de Salud Maiten</option>
           </select>
         </div>
-
-        <!-- Fecha y hora del problema -->
         <div class="mb-3">
           <label for="fecha" class="form-label">Fecha y Hora del Problema</label>
           <input type="datetime-local" class="form-control" id="fecha" name="fecha">
         </div>
-
-        <!-- Tipo de problema -->
         <div class="mb-3">
           <label for="problema" class="form-label">Tipo de Problema *</label>
           <textarea class="form-control" id="problema" name="problema" rows="2" required></textarea>
         </div>
-
-
- <div class="confirmacion-container">
-        <!-- Confirmación -->
-        
+        <div class="confirmacion-container">
           <input type="checkbox" class="form-check-input" id="confirmacion" required>
           <label class="form-check-label" for="confirmacion">Confirmo que los datos proporcionados son correctos.</label>
         </div>
-
-        <!-- Botón Enviar -->
-        <button type="submit" class="btn btn-primary w-100">Enviar Reporte</button>
+        <button type="submit" class="btn btn-primary w-100 mt-3">Enviar Reporte</button>
       </form>
       <p id="respuesta" class="text-center text-success mt-3"></p>
     </div>
-  </div>  
+  </div>
 
-</script>
-
-
-  <!-- Firebase SDKs -->
-  
-<<script type="module">
-    // Importar Firebase desde los módulos de Firebase
+  <!-- Firebase SDKs + Lógica -->
+  <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
     import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
 
-    // Configuración de Firebase
     const firebaseConfig = {
-        apiKey: "AIzaSyBPxvqvNfHKE1YJe4h6UwHznY4jsZMiJ0A",
-        authDomain: "reportes-cesfam.firebaseapp.com",
-        databaseURL: "https://reportes-cesfam-default-rtdb.firebaseio.com",
-        projectId: "reportes-cesfam",
-        storageBucket: "reportes-cesfam.firebasestorage.app",
-        messagingSenderId: "101243881563",
-        appId: "1:101243881563:web:793a5a48ffce80f2a4977e"
+      apiKey: "AIzaSyBPxvqvNfHKE1YJe4h6UwHznY4jsZMiJ0A",
+      authDomain: "reportes-cesfam.firebaseapp.com",
+      databaseURL: "https://reportes-cesfam-default-rtdb.firebaseio.com",
+      projectId: "reportes-cesfam",
+      storageBucket: "reportes-cesfam.firebasestorage.app",
+      messagingSenderId: "101243881563",
+      appId: "1:101243881563:web:793a5a48ffce80f2a4977e"
     };
 
-    // Inicializar Firebase
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
 
-    // URL de Google Sheets Apps Script
     const googleSheetsURL = "https://script.google.com/macros/s/AKfycbyMeb2xZf0wy6rtTkLezBVsRJh7ElyIxBAZgjJBkRzsy8uLXHCwV_5SRZ8NqsBwYyU7/exec";
 
-    // Manejo del envío del formulario con validaciones
     document.getElementById('formulario').addEventListener('submit', async function(e) {
-        e.preventDefault();
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value.trim();
+      const contacto = document.getElementById('contacto').value.trim();
+      const area = document.getElementById('area').value;
+      const fecha = document.getElementById('fecha').value;
+      const problema = document.getElementById('problema').value.trim();
+      const confirmacion = document.getElementById('confirmacion').checked;
+      const respuesta = document.getElementById('respuesta');
 
-        const nombre = document.getElementById('nombre').value.trim();
-        const contacto = document.getElementById('contacto').value.trim();
-        const area = document.getElementById('area').value;
-        const fecha = document.getElementById('fecha').value;
-        const problema = document.getElementById('problema').value.trim();
-        const confirmacion = document.getElementById('confirmacion').checked;
-        const respuesta = document.getElementById('respuesta');
+      let errores = [];
 
-        let errores = [];
+      if (nombre.length < 3 || !/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(nombre)) {
+        errores.push("⚠️ El nombre debe contener al menos 3 caracteres y solo letras.");
+      }
+      if (contacto && !/^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,}$/.test(contacto) && !/^\d{8,15}$/.test(contacto)) {
+        errores.push("⚠️ Ingresa un correo válido o un número de contacto válido.");
+      }
+      if (!area) {
+        errores.push("⚠️ Debes seleccionar un departamento o área.");
+      }
+      const fechaIngresada = new Date(fecha);
+      const fechaActual = new Date();
+      fechaActual.setHours(0,0,0,0);
+      if (!fecha || fechaIngresada < fechaActual) {
+        errores.push("⚠️ La fecha no puede estar vacía ni ser anterior a hoy.");
+      }
+      if (problema.length < 5) {
+        errores.push("⚠️ La descripción del problema debe tener al menos 5 caracteres.");
+      }
+      if (!confirmacion) {
+        errores.push("⚠️ Debes confirmar que los datos son correctos.");
+      }
 
-        // Validar nombre (solo letras y mínimo 3 caracteres)
-        if (nombre.length < 3 || !/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(nombre)) {
-            errores.push("⚠️ El nombre debe contener al menos 3 caracteres y solo letras.");
-        }
+      if (errores.length > 0) {
+        respuesta.innerHTML = errores.join("<br>");
+        respuesta.classList.add('text-danger');
+        return;
+      } else {
+        respuesta.innerHTML = "✅ Reporte enviado con éxito.";
+        respuesta.classList.remove('text-danger');
+        respuesta.classList.add('text-success');
 
-        // Validar correo o número de contacto si se ingresa
-        if (contacto && !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(contacto) && !/^\d{8,15}$/.test(contacto)) {
-            errores.push("⚠️ Ingresa un correo válido o un número de contacto (mínimo 8 dígitos).");
-        }
+        push(ref(database, 'reportes/'), { nombre, contacto, area, fecha, problema, confirmacion });
 
-        // Validar selección de departamento
-        if (!area) {
-            errores.push("⚠️ Debes seleccionar un departamento o área.");
-        }
+        fetch(googleSheetsURL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ nombre, contacto, area, fecha, problema })
+        }).then(response => response.text())
+          .then(data => console.log("Google Sheets:", data))
+          .catch(error => console.error("Error al enviar a Google Sheets:", error));
 
-        // Validar fecha (no se puede ingresar una fecha anterior a hoy)
-        const fechaIngresada = new Date(fecha);
-        const fechaActual = new Date();
-        fechaActual.setHours(0, 0, 0, 0); // Eliminar horas para comparación correcta
-
-        if (!fecha || fechaIngresada < fechaActual) {
-            errores.push("⚠️ La fecha no puede estar vacía ni ser anterior a hoy.");
-        }
-
-        // Validar descripción del problema
-        if (problema.length < 5) {
-            errores.push("⚠️ La descripción del problema debe tener al menos 5 caracteres.");
-        }
-
-        // Validar checkbox de confirmación
-        if (!confirmacion) {
-            errores.push("⚠️ Debes confirmar que los datos son correctos.");
-        }
-
-        // Mostrar errores o enviar el formulario
-        if (errores.length > 0) {
-            respuesta.innerHTML = errores.join("<br>");
-            respuesta.classList.add('text-danger');
-            return; // Detener el envío si hay errores
-        } else {
-            respuesta.innerHTML = "✅ Reporte enviado con éxito.";
-            respuesta.classList.remove('text-danger');
-            respuesta.classList.add('text-success');
-
-            // Enviar datos a Firebase
-            push(ref(database, 'reportes/'), {
-                nombre: nombre,
-                contacto: contacto,
-                area: area,
-                fecha: fecha,
-                problema: problema,
-                confirmacion: confirmacion
-            });
-
-            // Enviar datos a Google Sheets
-            fetch(googleSheetsURL, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    nombre: nombre,
-                    contacto: contacto,
-                    area: area,
-                    fecha: fecha,
-                    problema: problema
-                })
-            }).then(response => response.text())
-              .then(data => console.log("Google Sheets:", data))
-              .catch(error => console.error("Error al enviar a Google Sheets:", error));
-
-            document.getElementById('formulario').reset();
-        }
+        document.getElementById('formulario').reset();
+      }
     });
-</script>
-
-
+  </script>
 </body>
 </html>
