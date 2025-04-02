@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="icon" href="1.png" type="image/x-icon">
+  <link rel="icon" href="img/1.png" type="image/x-icon">
   <title>Formulario de Reporte de Problemas Técnicos</title>
 
   <!-- Importar Bootstrap CSS -->
@@ -155,7 +155,7 @@
 <body>
   <div class="main-container">
     <div class="side-container">
-      <img src="CESFAM_BLANCO.png" alt="Logo del CESFAM" class="logo">
+      <img src="img/CESFAM_BLANCO.png" alt="Logo del CESFAM" class="logo">
       <div class="links-container">
         <h5><strong>Acceso a Links de Salud</strong></h5>
         <p>Encuentra recursos y páginas relacionadas con nuestro CESFAM.</p>
@@ -187,10 +187,16 @@
             <option value="Centro de Salud Maiten">Centro de Salud Maiten</option>
           </select>
         </div>
-        <div class="mb-3">
-          <label for="fecha" class="form-label">Fecha y Hora del Problema</label>
-          <input type="datetime-local" step="3600" class="form-control" id="fecha" name="fecha">
-        </div>
+       
+
+<input type="date" class="form-control" id="fecha" name="fecha" required>
+
+
+
+
+
+
+
         <div class="mb-3">
           <label for="problema" class="form-label">Tipo de Problema *</label>
           <textarea class="form-control" id="problema" name="problema" rows="2" required></textarea>
@@ -246,12 +252,28 @@
       if (!area) {
         errores.push("⚠️ Debes seleccionar un departamento o área.");
       }
-      const fechaIngresada = new Date(fecha);
-      const fechaActual = new Date();
-      fechaActual.setHours(0,0,0,0);
-      if (!fecha || fechaIngresada < fechaActual) {
-        errores.push("⚠️ La fecha no puede estar vacía ni ser anterior a hoy.");
-      }
+	
+
+
+
+
+const fechaIngresada = document.getElementById("fecha").value;
+const hoy = new Date();
+if (!fechaIngresada) {
+  errores.push("⚠️ Por favor, ingresa una fecha válida.");
+} else {
+  const [anio, mes, dia] = fechaIngresada.split("-").map(Number);
+  const fechaIngresadaSinHora = new Date(anio, mes - 1, dia);
+  hoy.setHours(0, 0, 0, 0);
+  if (fechaIngresadaSinHora < hoy) {
+    errores.push("⚠️ La fecha no puede ser anterior a hoy.");
+  }
+}
+
+
+
+
+
       if (problema.length < 5) {
         errores.push("⚠️ La descripción del problema debe tener al menos 5 caracteres.");
       }
